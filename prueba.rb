@@ -8,6 +8,7 @@
   arreglo_de_alumnos = read_alum("alumnos.csv")
 
   def menu
+    system "clear"
     puts "-----------------------------"
     puts ""
     puts "------Menú------"
@@ -31,7 +32,8 @@
         suma = alumno[1..-1].map { |num| num.to_i}.sum
         print "El promedio de #{nombre} es #{suma/alumno[1..-1].length.to_f}\n"
       end
-
+      puts "presione una tecla para continuar"
+      gets
     elsif opcion == 2
       contador = 0
       arreglo_de_alumnos.each do |alumno|
@@ -40,8 +42,12 @@
           contador += 1
           print "La cantidad de inasistencias de #{nombre} es #{contador} \n"
           contador = 0
+        else
+          print "La cantidad de inasistencias de #{nombre} es #{contador} \n"
       end
     end
+    puts "presione una tecla para continuar"
+    gets
     elsif opcion == 3
 
       def aprobar (promedio, nota_aprobacion = 5.0)
@@ -62,9 +68,12 @@
          print "El alumno #{nombre} a Aprobado\n"
        end
       end
-
+      puts "presione una tecla para continuar"
+      gets
     else
       puts "\nSeleccione una opcion válida"
+      puts "presione una tecla para continuar"
+      gets
     end
 
     menu
